@@ -21,51 +21,55 @@ const Navbar = ({ onSearch }) => {
   };
 
   return (
-    <nav className="bg-linear-to-r from-indigo-900 via-violet-900 to-slate-950 text-slate-100 shadow-xl border-b border-violet-800">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        
+    <nav className="border-b border-slate-800/70 bg-slate-950/70 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-          <h1 className="text-2xl font-bold tracking-wide">
-            Task Manager
-          </h1>
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-violet-600 text-lg font-semibold shadow-lg">
+              T
+            </div>
+            <div>
+              <h1 className="text-xl font-semibold tracking-wide">Task Manager</h1>
+              <p className="text-sm text-slate-400">Stay ahead of your day</p>
+            </div>
+          </div>
 
-          <form onSubmit={handleSearchSubmit} className="flex w-full max-w-xs gap-2">
+          <form onSubmit={handleSearchSubmit} className="flex w-full max-w-md gap-2 sm:w-[280px]">
             <input
               type="text"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search tasks..."
-              className="flex-1 bg-slate-900/70 border border-violet-700 text-slate-100 placeholder:text-slate-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+              className="flex-1 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-2 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500"
             />
             <button
               type="submit"
-              className="bg-fuchsia-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-fuchsia-700 transition duration-300"
+              className="rounded-xl bg-sky-600 px-4 py-2 font-medium text-white transition hover:bg-sky-700"
             >
               Search
             </button>
           </form>
         </div>
 
-        <div className="flex items-center gap-3">
-          <span className="hidden sm:block text-slate-300 text-sm">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="hidden rounded-full border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-300 md:inline-flex">
             Welcome, User
           </span>
 
           <button
             onClick={() => navigate("/profile")}
-            className="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition duration-300"
+            className="rounded-xl bg-violet-600 px-4 py-2 font-medium text-white transition hover:bg-violet-700"
           >
             Profile
           </button>
 
           <button
             onClick={handleLogout}
-            className="bg-slate-700/80 text-slate-100 px-4 py-2 rounded-lg font-medium hover:bg-slate-600 transition duration-300"
+            className="rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-2 font-medium text-slate-100 transition hover:bg-slate-700"
           >
             Logout
           </button>
         </div>
-
       </div>
     </nav>
   );

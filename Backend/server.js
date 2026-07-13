@@ -14,7 +14,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: ["https://taskmanager-virid-psi.vercel.app", "http://localhost:5173"],
+  origin: ["https://taskmanager-virid-psi.vercel.app", "http://localhost:51"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
