@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://task-management-system-10-nvil.onrender.com/api",
+  baseURL: "https://taskmanager-unt8.onrender.com/api",
 });
 
 API.interceptors.request.use((req) => {
